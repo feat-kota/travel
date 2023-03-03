@@ -1,0 +1,336 @@
+/* font-family: 'Hina Mincho', serif;
+font-family: 'Kaisei Decol', serif; */
+
+h6 {
+    color: #F1EFE1;
+}
+* {
+    --main-color: #D1C9AE;
+    --pink-color: #E8A2A2;
+    --shadow-color: rgba(0, 0, 0, .2);
+    box-sizing: border-box;
+}
+
+
+/* スライダー */
+.swiper--wrapper {
+    width: 100%;
+    height: 300px;
+}  
+.swiper-slide {
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 27px;
+}
+.swiper-pagination-bullet {
+    width: 20px !important;
+    height: 5px !important;
+    margin: 0 0 0 10px !important;
+    background: #fff !important;
+    border-radius: 0 !important;
+    border: 1px solid #000;
+    opacity: 1 !important;
+} 
+.swiper-pagination-bullet-active.swiper-pagination-bullet {
+    background: var(--pink-color) !important;
+}
+.swiper-pagination-bullet:first-child {
+    margin: 0 !important;
+}
+
+
+/* fv */
+.fv,
+.fv-swiper img {
+    width: 100%;
+    height: 100vh;
+}
+.fv {
+    overflow: hidden;
+    position: relative;
+}
+.fv-swiper img {
+    object-fit: cover;
+}
+.fv .swiper-pagination-bullet {
+    width: 40px !important;
+}
+.fv_textBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 600px;
+    height: 320px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: var(--main-color);
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px var(--shadow-color);
+    z-index: 100;
+}
+.fv_textBox > div {
+    width: 90%;
+    text-align: center;
+}
+.fv_textBox h1,
+.fv_textBox p {
+    font-family: 'Kaisei Decol', serif;
+}
+.fv_textBox h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+.fv_textBox p {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.fv_textBox img {
+    width: 130px;
+}
+@media (max-width: 1024px) {
+    .fv,
+    .fv-swiper img {
+        height: 70vh;
+    }
+}
+@media (max-width: 767px) {
+    .fv_textBox {
+        width: 265px;
+        height: 220px;
+    }
+    .fv_textBox h1 {
+        font-size: 32px;
+    }
+    .fv_textBox p {
+        font-size: 18px;
+    }
+    .fv_textBox img {
+        width: 80px;
+    }
+}
+
+
+#day1 {
+    background-color: #EDEDE8;
+}
+#day2 {
+    background-color: #ffeeea;
+}
+#day3 {
+    background-color: #f7faf1;
+}
+#day1::before {
+    background-image: url('img/icon/tree.png');
+}
+#day2::before {
+    background-image: url('img/icon/monkey.png');
+}
+
+.day {
+    position: relative;
+    padding: 120px 0;
+}
+.day::before,
+.day::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+}
+.day::before {
+    width: 100px;
+    height: 100px;
+    bottom: -50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 20;
+}
+.day::after {
+    width: 150px;
+    height: 150px;
+    bottom: -75px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 3px 3px 7px var(--shadow-color);
+}
+.day.last-day::before,
+.day.last-day::after {
+    display: none;
+}
+.day > h2 {
+    font-family: 'Kaisei Decol', serif;
+    font-size: 56px;
+    text-align: center;
+    text-shadow: 3px 3px 2px var(--shadow-color);
+    margin-bottom: 70px;
+}
+.spot {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+.day .spot:last-child {
+    margin-bottom: 0;
+}
+.spot.reverse {
+    flex-direction: row-reverse;
+}
+.spot_slider,
+.spot_texts {
+    width: 50%;
+}
+.spot_slider img {
+    width: 100%;
+}
+.spot_title {
+    font-family: 'Kaisei Decol', serif;
+    margin-bottom: 20px;
+}
+.spot_title p {
+    color: var(--main-color);
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.spot_title h3 {
+    font-size: 32px;
+}
+.spot_texts {
+    padding: 0 40px;
+}
+.spot_texts > div {
+    position: relative;
+    padding: 30px 40px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 3px 3px 8px var(--shadow-color);
+}
+.spot_num {
+    font-family: 'Kaisei Decol', serif;
+    font-style: italic;
+    display: inline-block;
+    color: var(--pink-color);
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.spot_texts > div > p {
+    line-height: 1.3;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+.spot_data > p {
+    font-weight: bold;
+    margin-bottom: 11px;
+}
+.spot_data li {
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.foot {
+    text-align: center;
+    margin: 40px 0;
+}
+.foot img {
+    height: 200px;
+}
+.foot.right img {
+    transform: rotate(-192deg);
+}
+.foot.left img {
+    transform: rotate(-258deg);
+}
+@media (max-width: 1024px) {
+    .day {
+        padding: 90px 0;
+    }
+    .day::after {
+        width: 110px;
+        height: 110px;
+        bottom: -55px;
+    }
+    .day::before {
+        width: 80px;
+        height: 80px;
+        bottom: -40px;
+    }
+    .day > h2 {
+        font-size: 40px;
+        margin-bottom: 50px;
+    }
+    .spot {
+        display: block;
+        width: 100%;
+    }
+    .spot + .spot {
+        margin-top: 40px;
+    }
+    .spot_slider {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .spot_texts {
+        width: 100%;
+    }
+    .spot_texts {
+        padding: 0;
+        margin-top: 40px;
+    }
+    .spot_texts > div {
+        width: 90%;
+        padding: 15px 30px;
+        margin: 0 auto;
+        box-shadow: none;
+    }
+    .foot {
+        margin: 50px 0;
+    }
+    .foot img {
+        height: 160px;
+    }
+    .foot.left img {
+        transform: rotate(-236deg);
+    }
+    .foot.right img {
+        transform: rotate(-203deg);
+    }
+}
+@media (max-width: 767px) {
+    .day > h2 {
+        font-size: 28px;
+    }
+    .spot_slider {
+        width: 90%;
+    }
+    .spot_texts {
+        margin-top: 20px;
+    }
+    .spot_num {
+        font-size: 40px;
+    }
+    .spot_title p {
+        font-size: 16px;
+    }
+    .spot_title h3 {
+        font-size: 26px;
+    }
+    .foot {
+        margin: 35px 0;
+    }
+    .foot img {
+        height: 120px;
+    }
+}
